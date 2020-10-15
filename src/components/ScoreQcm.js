@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const ScoreQcm = ({ count }) => {
@@ -9,5 +10,9 @@ const ScoreQcm = ({ count }) => {
     </div>
   );
 };
+
+ScoreQcm.propTypes = {
+  count: PropTypes.number
+}
 
 export default ScoreQcm;

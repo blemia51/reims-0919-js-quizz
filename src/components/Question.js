@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./Question.css";
 
@@ -12,6 +13,13 @@ function Question(props) {
       </p>
     </div>
   );
+}
+
+Question.propTypes = {
+  question: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.object,
+  ]),
 }
 
 export default Question;

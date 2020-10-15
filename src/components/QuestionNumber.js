@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 
 const QuestioNumber = ({ questionNumber }) => {
@@ -9,5 +10,9 @@ const QuestioNumber = ({ questionNumber }) => {
     </div>
   );
 };
+
+QuestioNumber.propTypes = {
+  questionNumber: PropTypes.number
+}
 
 export default QuestioNumber;

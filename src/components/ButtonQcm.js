@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./ButtonQcm.css";
 
@@ -43,7 +44,7 @@ class ButtonQcm extends React.Component {
 
   render() {
 		const { win, lost, buttonWinOrder } = this.state;
-		const { correct_answer, incorrect_answer } = this.props;
+    const { correct_answer, incorrect_answer } = this.props;
     return (
       <div className="cardContent">
         <div className="button-order">
@@ -119,6 +120,14 @@ class ButtonQcm extends React.Component {
       </div>
     );
   }
+}
+
+ButtonQcm.propTypes = {
+  correct_answer: PropTypes.string,
+  getQuestions: PropTypes.func,
+  incorrect_answer: PropTypes.array,
+  incrementQuestionNumber: PropTypes.func,
+  incrementScore: PropTypes.func
 }
 
 export default ButtonQcm;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./CardQuestion.css";
 import "./ButtonQcm.css";
@@ -49,6 +50,10 @@ class ChoixQfmVF extends React.Component {
       </div>
     );
   }
+}
+
+ChoixQfmVF.propTypes = {
+  location: PropTypes.object
 }
 
 export default ChoixQfmVF;

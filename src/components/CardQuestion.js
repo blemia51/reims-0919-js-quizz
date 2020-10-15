@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import axios from "axios";
 import "./CardQuestion.css";
@@ -98,6 +99,10 @@ class CardQuestion extends React.Component {
       </div>
     );
   }
+}
+
+CardQuestion.propTypes = {
+  location: PropTypes.object
 }
 
 export default CardQuestion;

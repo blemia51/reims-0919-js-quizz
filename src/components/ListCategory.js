@@ -78,7 +78,7 @@ const category = [
   },
 ];
 
-const ListCategory = (props) => (
+const ListCategory = () => (
   <div>
     <Nav />
     <figure style={{ width: "100%", margin: "auto" }}>

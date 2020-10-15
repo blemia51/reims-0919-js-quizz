@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Category.css";
@@ -33,6 +34,13 @@ class Category extends React.Component {
       </figure>
     );
   }
+}
+
+Category.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  isSelected: PropTypes.bool,
+  name: PropTypes.string
 }
 
 export default Category;

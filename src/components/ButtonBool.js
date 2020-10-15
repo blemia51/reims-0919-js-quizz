@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import "./ButtonQcm.css";
 
@@ -104,6 +105,14 @@ class ButtonBool extends React.Component {
       </div>
     );
   }
+}
+
+ButtonBool.propTypes = {
+  correct_answer: PropTypes.string,
+  getQuestions: PropTypes.func,
+  incorrect_answer: PropTypes.array,
+  incrementQuestionNumber: PropTypes.func,
+  incrementScore: PropTypes.func
 }
 
 export default ButtonBool;

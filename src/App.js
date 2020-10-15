@@ -6,7 +6,6 @@ import CardQuestion from "./components/CardQuestion";
 import Nav from "./components/Nav";
 import CardQuestionBool from "./components/CardQuestionBool";
 
-
 class App extends React.Component {
   render() {
     return (
@@ -14,7 +13,6 @@ class App extends React.Component {
         <Router>
           <Switch>
             <Route exact path="/" component={ListCategory} />
-
             <Route
               path="/choiceQuestion"
               render={(props) => (
@@ -24,7 +22,6 @@ class App extends React.Component {
                 </>
               )}
             />
-
             <Route
               path="/question"
               render={(props) => (
@@ -34,7 +31,6 @@ class App extends React.Component {
                 </>
               )}
             />
-
             <Route
               path="/questionbool"
               render={(props) => (
