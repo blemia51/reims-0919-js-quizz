@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/reims-0919-js-quizz/static/css/main.71ed8b4f.chunk.css",
+    "main.js": "/reims-0919-js-quizz/static/js/main.882fd6a7.chunk.js",
+    "main.js.map": "/reims-0919-js-quizz/static/js/main.882fd6a7.chunk.js.map",
+    "runtime-main.js": "/reims-0919-js-quizz/static/js/runtime-main.61a8c461.js",
+    "runtime-main.js.map": "/reims-0919-js-quizz/static/js/runtime-main.61a8c461.js.map",
+    "static/js/2.89284974.chunk.js": "/reims-0919-js-quizz/static/js/2.89284974.chunk.js",
+    "static/js/2.89284974.chunk.js.map": "/reims-0919-js-quizz/static/js/2.89284974.chunk.js.map",
+    "index.html": "/reims-0919-js-quizz/index.html",
+    "precache-manifest.388d63594c9696b0dc59a44624b0f717.js": "/reims-0919-js-quizz/precache-manifest.388d63594c9696b0dc59a44624b0f717.js",
+    "service-worker.js": "/reims-0919-js-quizz/service-worker.js",
+    "static/css/main.71ed8b4f.chunk.css.map": "/reims-0919-js-quizz/static/css/main.71ed8b4f.chunk.css.map",
+    "static/js/2.89284974.chunk.js.LICENSE.txt": "/reims-0919-js-quizz/static/js/2.89284974.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61a8c461.js",
+    "static/js/2.89284974.chunk.js",
+    "static/css/main.71ed8b4f.chunk.css",
+    "static/js/main.882fd6a7.chunk.js"
+  ]
+}
