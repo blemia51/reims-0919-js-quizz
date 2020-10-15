@@ -6,10 +6,7 @@ import Category from "./Category";
 import { Link } from "react-router-dom";
 
 class ChoixQfmVF extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+  
   render() {
 		const { location } = this.props;
     const { state: { categoryId, categoryName, categoryImage } } = location;
