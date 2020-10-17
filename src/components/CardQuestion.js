@@ -66,13 +66,15 @@ class CardQuestion extends React.Component {
               alt="category"
               src={categoryImage}
             ></img>
-            <figcaption>{categoryName}</figcaption>
+            {/* <figcaption>{categoryName}</figcaption> */}
           </figure>
         </div>
+        <div className="bloc-qcm">
+        <div className="categrie-name">{categoryName}</div>
         <hr className="ligneSection"></hr>
-
-        <ScoreQcm count={count} />
-
+        <span className="counter">
+          <ScoreQcm count={count} />
+        </span>
         {arrayQuestions.map((q) => (
           <div key={q.question}>
             <span>
@@ -95,7 +97,9 @@ class CardQuestion extends React.Component {
               </div>
             </div>
           </div>
+          
         ))}
+        </div>
       </div>
     );
   }

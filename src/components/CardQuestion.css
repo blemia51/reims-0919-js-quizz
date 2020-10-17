@@ -1,54 +1,67 @@
-.cardContent {
+/* @media screen and (max-width: 760px) { */
+  .cardContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-}
+  }
 
-#cardContentBool {
-    display : none;
-}
+  #cardContentBool {
+    display: none;
+  }
 
-#cardContentQcm {
+  #cardContentQcm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-}
+  }
 
-.imageContainer {
+  .imageContainer {
     width: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.imageContainer figcaption {
+  }
+  .imageContainer figcaption {
     margin-top: 10px;
-}
+  }
 
-.imageCategory {
+  .imageCategory {
     max-width: 75%;
-    
-}
+  }
 
-.ligneSection {
+  .ligneSection {
     color: #ffc800;
     height: 0.2em;
-    background-color:  #ffc800;
+    background-color: #ffc800;
     border: none;
     width: 40%;
-}
+  }
 
-.cardContent p {
+  .cardContent p {
     text-align: center;
     padding: 8 px;
-}
+  }
 
-.questionNumber {
+  .questionNumber {
     margin-top: 80px;
-}
+	}
+	
+	.bloc-qcm {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
+@media screen and (min-width: 760px) {
+		#cardContentQcm {
+			flex-direction: row;
+		}
+
+
+} 
