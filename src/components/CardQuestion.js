@@ -14,6 +14,7 @@ class CardQuestion extends React.Component {
       arrayQuestions: [],
       count: 0,
       questionNumber: 1,
+      loading: true,
     };
     this.incrementScore = this.incrementScore.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
@@ -33,7 +34,7 @@ class CardQuestion extends React.Component {
       )
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ arrayQuestions: data.results });
+        this.setState({ arrayQuestions: data.results, loading: false });
       });
   }
 
@@ -50,7 +51,7 @@ class CardQuestion extends React.Component {
   }
 
   render() {
-    const { arrayQuestions, count, questionNumber } = this.state;
+    const { arrayQuestions, count, questionNumber, loading } = this.state;
     const { location } = this.props;
     const { state: { categoryName, categoryImage } } = location;
     return (
@@ -72,17 +73,15 @@ class CardQuestion extends React.Component {
 
         <ScoreQcm count={count} />
 
-        {arrayQuestions.map((quest) => (
-          <span key={quest.question}>
-            <Question question={quest.question} />
-          </span>
-        ))}
+        {arrayQuestions.map((q) => (
+          <div key={q.question}>
+            <span>
+              <Question question={q.question} />
+            </span>
+        
+            <p>Choose the correct answer</p>
 
-        <p>Choose the correct answer</p>
-
-        <div id="buttonQcmContainer">
-          {arrayQuestions.map((q) => {
-            return (
+            <div id="buttonQcmContainer">
               <div key={q.category}>
                 <ButtonQcm
                   correct_answer={q.correct_answer}
@@ -91,11 +90,12 @@ class CardQuestion extends React.Component {
                   incrementScore={this.incrementScore}
                   getQuestions={this.getQuestions}
                   incrementQuestionNumber={this.incrementQuestionNumber}
+                  loading={loading}
                 />
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     );
   }

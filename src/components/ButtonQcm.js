@@ -123,6 +123,7 @@ class ButtonQcm extends React.Component {
 }
 
 ButtonQcm.propTypes = {
+  loading: PropTypes.bool,
   correct_answer: PropTypes.string,
   getQuestions: PropTypes.func,
   incorrect_answer: PropTypes.array,

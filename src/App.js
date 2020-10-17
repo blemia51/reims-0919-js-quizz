@@ -11,33 +11,25 @@ class App extends React.Component {
     return (
       <div>
         <Router>
+          <Nav />
           <Switch>
             <Route exact path="/" component={ListCategory} />
             <Route
               path="/choiceQuestion"
               render={(props) => (
-                <>
-                  <Nav />
-                  <ChoixQfmVF {...props} />
-                </>
+                <ChoixQfmVF {...props} /> 
               )}
             />
             <Route
               path="/question"
               render={(props) => (
-                <>
-                  <Nav />
-                  <CardQuestion {...props} />
-                </>
+                <CardQuestion {...props} />
               )}
             />
             <Route
               path="/questionbool"
               render={(props) => (
-                <>
-                  <Nav />
-                  <CardQuestionBool {...props} />
-                </>
+                <CardQuestionBool {...props} />
               )}
             />
           </Switch>

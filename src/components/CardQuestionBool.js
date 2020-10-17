@@ -71,17 +71,15 @@ class CardQuestionBool extends React.Component {
 
         <ScoreQcm count={count} />
 
-        {arrayQuestions.map((quest) => (
-          <span key={quest.question}>
-            <Question question={quest.question} />
-          </span>
-        ))}
+        {arrayQuestions.map((q) => (
+          <div key={q.question}>
+            <span>
+              <Question question={q.question} />
+            </span>
 
-        <p>True or False ?</p>
+            <p>True or False ?</p>
 
-        <div id="buttonQcmContainer">
-          {arrayQuestions.map((q) => {
-            return (
+            <div id="buttonQcmContainer">
               <div key={q.category}>
                 <ButtonBool
                   correct_answer={q.correct_answer}
@@ -92,9 +90,9 @@ class CardQuestionBool extends React.Component {
                   incrementQuestionNumber={this.incrementQuestionNumber}
                 />
               </div>
-            );
-          })}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     );
   }
