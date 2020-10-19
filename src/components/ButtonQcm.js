@@ -33,7 +33,8 @@ class ButtonQcm extends React.Component {
 
   nextQuestion() {
     this.setState({ win: false, lost: false });
-    this.props.getQuestions();
+    //this.props.getQuestions();
+    this.props.nextStep();
     this.props.incrementQuestionNumber();
     this.buttonWinOrder();
   }
@@ -125,7 +126,7 @@ class ButtonQcm extends React.Component {
 ButtonQcm.propTypes = {
   loading: PropTypes.bool,
   correct_answer: PropTypes.string,
-  getQuestions: PropTypes.func,
+  nextStep: PropTypes.func,
   incorrect_answer: PropTypes.array,
   incrementQuestionNumber: PropTypes.func,
   incrementScore: PropTypes.func

@@ -1,11 +1,18 @@
 import PropTypes from "prop-types";
 import React from "react";
+import { css } from "@emotion/core";
+import PulseLoader from "react-spinners/PulseLoader";
 import axios from "axios";
 import "./CardQuestion.css";
 import ButtonQcm from "./ButtonQcm";
 import ScoreQcm from "./ScoreQcm";
 import Question from "./Question";
 import QuestionNumber from "./QuestionNumber";
+
+const override = css`
+  display: block;
+  margin: 0 auto;
+`;
 
 class CardQuestion extends React.Component {
   constructor(props) {
@@ -14,11 +21,13 @@ class CardQuestion extends React.Component {
       arrayQuestions: [],
       count: 0,
       questionNumber: 1,
+      step: 0,
       loading: true,
     };
     this.incrementScore = this.incrementScore.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
     this.incrementQuestionNumber = this.incrementQuestionNumber.bind(this);
+    this.nextQuestion = this.nextQuestion.bind(this);
   }
 
   componentDidMount() {
@@ -30,12 +39,21 @@ class CardQuestion extends React.Component {
     const { state: { categoryId } } = location;
     axios
       .get(
-        `https://opentdb.com/api.php?amount=1&Token=1234&category=${categoryId}&difficulty=easy&type=multiple`
+        `https://opentdb.com/api.php?amount=5&Token=1234&category=${categoryId}&difficulty=easy&type=multiple`
       )
       .then((response) => response.data)
       .then((data) => {
         this.setState({ arrayQuestions: data.results, loading: false });
       });
+  }
+
+  nextQuestion() {
+    const { step, arrayQuestions } = this.state;
+    if (step < arrayQuestions.length) {
+      this.setState({
+        step: step + 1
+      },() =>  console.log(step));
+    }
   }
 
   incrementQuestionNumber() {
@@ -51,9 +69,10 @@ class CardQuestion extends React.Component {
   }
 
   render() {
-    const { arrayQuestions, count, questionNumber, loading } = this.state;
+    const { arrayQuestions, count, questionNumber, loading, step } = this.state;
     const { location } = this.props;
     const { state: { categoryName, categoryImage } } = location;
+    console.log(arrayQuestions)
     return (
       <div className="cardContent" id="cardContentQcm">
         <div>
@@ -75,7 +94,7 @@ class CardQuestion extends React.Component {
         <span className="counter">
           <ScoreQcm count={count} />
         </span>
-        {arrayQuestions.map((q) => (
+        {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
           <div key={q.question}>
             <span>
               <Question question={q.question} />
@@ -93,12 +112,17 @@ class CardQuestion extends React.Component {
                   getQuestions={this.getQuestions}
                   incrementQuestionNumber={this.incrementQuestionNumber}
                   loading={loading}
+                  nextStep={this.nextQuestion}
                 />
               </div>
             </div>
           </div>
-          
-        ))}
+        )):<PulseLoader css={override}
+        size={15}
+        color={"#ffc800"}
+        loading={this.state.loading}
+        />
+        }
         </div>
       </div>
     );

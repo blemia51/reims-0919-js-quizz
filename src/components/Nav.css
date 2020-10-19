@@ -1,19 +1,38 @@
 .Nav {
-    display: flex;
-    justify-content: flex-end;
-    background-color:#ffc800 ;
-    padding: 5px 20px 5px 5px;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ffc800;
+  padding: 5px 20px 5px 5px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 .Nav h3 {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    margin-right: 30px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin-right: 30px;
 }
 
 .trainYourBrain:hover {
-    color:#9da7cd;
+	color: #9da7cd;
+}
+
+a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+a:hover {
+	color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+@media screen and (min-width: 760px) {
+	.bm-burger-button  {
+		display: none;
+	}
 }
