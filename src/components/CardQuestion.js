@@ -79,14 +79,13 @@ class CardQuestion extends React.Component {
           <div className="questionNumber">
             <QuestionNumber questionNumber={questionNumber} />
           </div>
-          <figure className="imageContainer">
+          {/* <figure className="imageContainer">
             <img
               className="imageCategory"
               alt="category"
               src={categoryImage}
             ></img>
-            {/* <figcaption>{categoryName}</figcaption> */}
-          </figure>
+          </figure> */}
         </div>
         <div className="bloc-qcm">
         <div className="categrie-name">{categoryName}</div>

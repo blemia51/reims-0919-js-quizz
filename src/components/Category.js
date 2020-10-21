@@ -12,26 +12,29 @@ class Category extends React.Component {
   }
 
   render() {
+    console.log(this.props.picto)
     return (
-      <figure className="all-category">
+      <div className="all-category">
         <Link
           to={{
             pathname: "/choiceQuestion",
             state: {
               categoryImage: this.props.image,
               categoryName: this.props.name,
+              categoryPicto: this.props.picto,
               categoryId: this.props.id,
             },
           }}
         >
-          <img
+          {/* <img
             className="category-img"
             src={this.props.image}
             alt={this.props.name}
-          />
+          /> */}
+          <i class={this.props.picto} style={{fontSize:'100px', paddingTop:'20px'}}></i>
+          <h4 className="name-category">{this.props.name.toUpperCase()}</h4>
         </Link>
-        <figcaption className="name-category">{this.props.name}</figcaption>
-      </figure>
+      </div>
     );
   }
 }
@@ -39,6 +42,7 @@ class Category extends React.Component {
 Category.propTypes = {
   id: PropTypes.number,
   image: PropTypes.string,
+  picto: PropTypes.string,
   isSelected: PropTypes.bool,
   name: PropTypes.string
 }

@@ -18,20 +18,21 @@
 	color: #9da7cd;
 }
 
-a {
+.Nav a, a {
   text-decoration: none;
-  color: lightgray;
+	color: white;
+	text-align: center;
 }
 
-a:hover {
+.Nav a:hover {
 	color: white;
 }
 
-ul {
+.Mav ul {
   list-style: none;
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 769px) {
 	.bm-burger-button  {
 		display: none;
 	}
