@@ -12,7 +12,6 @@ class Category extends React.Component {
   }
 
   render() {
-    console.log(this.props.picto)
     return (
       <div className="all-category">
         <Link
@@ -31,7 +30,7 @@ class Category extends React.Component {
             src={this.props.image}
             alt={this.props.name}
           /> */}
-          <i class={this.props.picto} style={{fontSize:'100px', paddingTop:'20px'}}></i>
+          <i className={this.props.picto} style={{fontSize:'100px', paddingTop:'20px'}}></i>
           <h4 className="name-category">{this.props.name.toUpperCase()}</h4>
         </Link>
       </div>

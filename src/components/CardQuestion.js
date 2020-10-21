@@ -71,8 +71,7 @@ class CardQuestion extends React.Component {
   render() {
     const { arrayQuestions, count, questionNumber, loading, step } = this.state;
     const { location } = this.props;
-    const { state: { categoryName, categoryImage } } = location;
-    console.log(arrayQuestions)
+    const { state: { categoryName } } = location;
     return (
       <div className="cardContent" id="cardContentQcm">
         <div>
