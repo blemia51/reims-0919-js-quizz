@@ -41,7 +41,8 @@ class ButtonBool extends React.Component {
       winF: false,
       lostF: false,
     });
-    this.props.getQuestions();
+    //this.props.getQuestions();
+    this.props.nextStep();
     this.props.incrementQuestionNumber();
   }
 
