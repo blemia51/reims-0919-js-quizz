@@ -7,7 +7,7 @@ class Nav extends React.Component {
   render() {
     return (
       <div className="Nav">
-        <Menu styles={styles} right className="burger">
+        <Menu styles={styles} width={ 240 } >
           <ul>
             <li>
               <a id="home" className="menu-item" href="/">Home</a>
@@ -56,12 +56,14 @@ var styles = {
   },
   bmMenuWrap: {
     position: 'fixed',
+    left: '0',
     height: '100%'
   },
   bmMenu: {
     background: 'rgb(125, 135, 180)',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
+    padding: '2.5em 0',
+    fontSize: '1.15em',
+    overflow: 'unset'
   },
   bmMorphShape: {
     fill: '#373a47'
@@ -74,9 +76,10 @@ var styles = {
     display: 'inline-block'
   },
   bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
+    background: 'rgba(0, 0, 0, 0.3)',
+    left: '0'
+
   }
 }
-
 
 export default Nav;
