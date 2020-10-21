@@ -110,6 +110,7 @@ class ButtonQcm extends React.Component {
         </div>
         <div>
           <button
+            disabled={this.props.step < 4 ? false : true} 
             className={
               lost || win ? "qcmButton" : "noImage"
             }
@@ -124,6 +125,7 @@ class ButtonQcm extends React.Component {
 }
 
 ButtonQcm.propTypes = {
+  step: PropTypes.bool,
   loading: PropTypes.bool,
   correct_answer: PropTypes.string,
   nextStep: PropTypes.func,

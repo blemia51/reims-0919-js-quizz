@@ -43,7 +43,7 @@ class CardQuestionBool extends React.Component {
       )
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ arrayQuestions: data.results });
+        this.setState({ arrayQuestions: data.results, loading: false });
       });
   }
 
@@ -55,7 +55,6 @@ class CardQuestionBool extends React.Component {
       },() =>  console.log(step));
     }
   }
-
 
   incrementQuestionNumber() {
     this.setState({
@@ -86,43 +85,44 @@ class CardQuestionBool extends React.Component {
           ></img>
         </figure> */}
         <div className="bloc-qcm">
-        <div className="categrie-name">{categoryName}</div>
+          <div className="categrie-name">{categoryName}</div>
 
-        <hr className="ligneSection"></hr>
+          <hr className="ligneSection"></hr>
 
-        <span className="counter">
-          <ScoreQcm count={count} />
-        </span>
+          <span className="counter">
+            <ScoreQcm count={count} />
+          </span>
 
-        {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
-          <div key={q.question}>
-            <span>
-              <Question question={q.question} />
-            </span>
+          {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
+            <div key={q.question}>
+              <span>
+                <Question question={q.question} />
+              </span>
 
-            <p>True or False ?</p>
+              <p>True or False ?</p>
 
-            <div id="buttonQcmContainer">
-              <div key={q.category}>
-                <ButtonBool
-                  correct_answer={q.correct_answer}
-                  incorrect_answer={q.incorrect_answers}
-                  key={q.category}
-                  incrementScore={this.incrementScore}
-                  getQuestions={this.getQuestions}
-                  incrementQuestionNumber={this.incrementQuestionNumber}
-                  loading={loading}
-                  nextStep={this.nextQuestion}
-                />
+              <div id="buttonQcmContainer">
+                <div key={q.category}>
+                  <ButtonBool
+                    correct_answer={q.correct_answer}
+                    incorrect_answer={q.incorrect_answers}
+                    key={q.category}
+                    incrementScore={this.incrementScore}
+                    getQuestions={this.getQuestions}
+                    incrementQuestionNumber={this.incrementQuestionNumber}
+                    loading={loading}
+                    nextStep={this.nextQuestion}
+                    step={step}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        )):<PulseLoader css={override}
-        size={15}
-        color={"#ffc800"}
-        loading={this.state.loading}
-        />
-        }
+          )):<PulseLoader css={override}
+          size={15}
+          color={"#ffc800"}
+          loading={this.state.loading}
+          />
+          }
         </div>
       </div>
     );

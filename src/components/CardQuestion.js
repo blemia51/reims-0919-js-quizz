@@ -87,40 +87,39 @@ class CardQuestion extends React.Component {
           </figure> */}
         </div>
         <div className="bloc-qcm">
-        <div className="categrie-name">{categoryName}</div>
-        <hr className="ligneSection"></hr>
-        <span className="counter">
-          <ScoreQcm count={count} />
-        </span>
-        {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
-          <div key={q.question}>
-            <span>
-              <Question question={q.question} />
-            </span>
-        
-            <p>Choose the correct answer</p>
-
-            <div id="buttonQcmContainer">
-              <div key={q.category}>
-                <ButtonQcm
-                  correct_answer={q.correct_answer}
-                  incorrect_answer={q.incorrect_answers}
-                  key={q.category}
-                  incrementScore={this.incrementScore}
-                  getQuestions={this.getQuestions}
-                  incrementQuestionNumber={this.incrementQuestionNumber}
-                  loading={loading}
-                  nextStep={this.nextQuestion}
-                />
+          <div className="categrie-name">{categoryName}</div>
+          <hr className="ligneSection"></hr>
+          <span className="counter">
+            <ScoreQcm count={count} />
+          </span>
+          {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
+            <div key={q.question}>
+              <span>
+                <Question question={q.question} />
+              </span>
+              <p>Choose the correct answer</p>
+              <div id="buttonQcmContainer">
+                <div key={q.category}>
+                  <ButtonQcm
+                    correct_answer={q.correct_answer}
+                    incorrect_answer={q.incorrect_answers}
+                    key={q.category}
+                    incrementScore={this.incrementScore}
+                    getQuestions={this.getQuestions}
+                    incrementQuestionNumber={this.incrementQuestionNumber}
+                    loading={loading}
+                    nextStep={this.nextQuestion}
+                    step={step}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        )):<PulseLoader css={override}
-        size={15}
-        color={"#ffc800"}
-        loading={this.state.loading}
-        />
-        }
+          )):<PulseLoader css={override}
+          size={15}
+          color={"#ffc800"}
+          loading={this.state.loading}
+          />
+          }
         </div>
       </div>
     );
