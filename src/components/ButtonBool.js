@@ -95,15 +95,6 @@ class ButtonBool extends React.Component {
           ></img>
         </div>
         <div>
-          {/* <button
-            disabled={this.props.step < 4 ? false : true} 
-            onClick={this.nextQuestion}
-            className={
-              this.state.lost || this.state.win ? "qcmButton" : "noImage"
-            }
-          >
-            Next question
-          </button> */}
           <Button
             label='Next question'
             className={
@@ -123,7 +114,7 @@ ButtonBool.propTypes = {
   nextStep: PropTypes.func,
   incorrect_answer: PropTypes.array,
   incrementQuestionNumber: PropTypes.func,
-  incrementScore: PropTypes.func
+  incrementScore: PropTypes.func,
 }
 
 export default ButtonBool;

@@ -110,15 +110,6 @@ class ButtonQcm extends React.Component {
           ></img>
         </div>
         <div>
-          {/* <button
-            disabled={this.props.step < 4 ? false : true} 
-            className={
-              lost || win ? "qcmButton" : "noImage"
-            }
-            onClick={this.nextQuestion}
-          >
-            Next question
-          </button> */}
           <Button
             label='Next question'
             className={
