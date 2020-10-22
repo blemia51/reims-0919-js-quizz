@@ -29,6 +29,7 @@ class ChoixQfmVF extends React.Component {
                   categoryImage: categoryImage,
                   categoryName: categoryName,
                   categoryId: categoryId,
+                  categoryPicto: categoryPicto,
                 },
               }}
             >
@@ -41,6 +42,7 @@ class ChoixQfmVF extends React.Component {
                   categoryImage: categoryImage,
                   categoryName: categoryName,
                   categoryId: categoryId,
+                  categoryPicto: categoryPicto,
                 },
               }}
             >

@@ -71,10 +71,10 @@ class CardQuestion extends React.Component {
   render() {
     const { arrayQuestions, count, questionNumber, loading, step } = this.state;
     const { location } = this.props;
-    const { state: { categoryName } } = location;
+    const { state: { categoryName, categoryPicto } } = location;
     return (
       <div className="cardContent" id="cardContentQcm">
-        <div>
+        <div >
           <div className="questionNumber">
             <QuestionNumber questionNumber={questionNumber} />
           </div>
@@ -87,6 +87,7 @@ class CardQuestion extends React.Component {
           </figure> */}
         </div>
         <div className="bloc-qcm">
+          <i className={categoryPicto} style={{color:'#ffc800', fontSize:'50px', paddingBottom:'12px'}}></i>
           <div className="categrie-name">{categoryName}</div>
           <hr className="ligneSection"></hr>
           <span className="counter">

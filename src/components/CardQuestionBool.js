@@ -77,13 +77,6 @@ class CardQuestionBool extends React.Component {
         <div className="questionNumber">
           <QuestionNumber questionNumber={questionNumber} />
         </div>
-        {/* <figure className="imageContainer">
-          <img
-            className="imageCategory"
-            alt="category"
-            src={categoryImage}
-          ></img>
-        </figure> */}
         <div className="bloc-qcm">
           <div className="categrie-name">{categoryName}</div>
 
