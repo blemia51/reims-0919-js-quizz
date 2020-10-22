@@ -74,17 +74,8 @@ class CardQuestion extends React.Component {
     const { state: { categoryName, categoryPicto } } = location;
     return (
       <div className="cardContent" id="cardContentQcm">
-        <div >
-          <div className="questionNumber">
-            <QuestionNumber questionNumber={questionNumber} />
-          </div>
-          {/* <figure className="imageContainer">
-            <img
-              className="imageCategory"
-              alt="category"
-              src={categoryImage}
-            ></img>
-          </figure> */}
+        <div className="questionNumber">
+          <QuestionNumber questionNumber={questionNumber} />
         </div>
         <div className="bloc-qcm">
           <i className={categoryPicto} style={{color:'#ffc800', fontSize:'50px', paddingBottom:'12px'}}></i>
@@ -111,6 +102,7 @@ class CardQuestion extends React.Component {
                     loading={loading}
                     nextStep={this.nextQuestion}
                     step={step}
+                    isDisabled
                   />
                 </div>
               </div>

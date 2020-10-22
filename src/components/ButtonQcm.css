@@ -1,79 +1,88 @@
-.qcmButton, #qcmButtonT, #qcmButtonF {
-    border-radius: 15px;
-    padding:  5px 10px 5px 10px;
-    background-color: white;
-    border: solid 2px blueviolet;
-    margin: 5px;
-    cursor: pointer;
-    box-shadow:3px 3px 5px grey;
-    word-wrap: wrap;
-    color: black;
+.qcmButton,
+#qcmButtonT,
+#qcmButtonF {
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  background-color: white;
+  border: solid 2px blueviolet;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px grey;
+  word-wrap: wrap;
+  color: black;
 }
-
 
 .qcmButton:hover {
-    background-color: blueviolet !important;
-    color: white !important;
+  background-color: blueviolet !important;
+  color: white !important;
 }
 
-.winButton, #winButtonT, #winButtonF {
-    background-color: #ffc800;
-    border: 2px #ffc800;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 15px;
-    padding:  5px 10px 5px 10px;
-    box-shadow:3px 3px 5px grey;
-    word-wrap: wrap;
-
+.winButton,
+#winButtonT,
+#winButtonF {
+  background-color: #ffc800;
+  border: 2px #ffc800;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  box-shadow: 3px 3px 5px grey;
+  word-wrap: wrap;
 }
 
-
-.lostButton, #lostButtonT, #lostButtonF {
-    border-radius: 15px;
-    padding:  5px 10px 5px 10px;
-    background-color: blueviolet;
-    color: white;
-    border: solid 2px blueviolet;
-    margin: 5px;
-    cursor: pointer;
-    box-shadow:3px 3px 5px grey;
-    word-wrap: wrap;
-
+.lostButton,
+#lostButtonT,
+#lostButtonF {
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  background-color: blueviolet;
+  color: white;
+  border: solid 2px blueviolet;
+  margin: 5px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px grey;
+  word-wrap: wrap;
 }
 
-.winLogo , .lostLogo{
-    width: 70%;
+.winLogo,
+.lostLogo {
+  width: 70%;
 }
 
-.imageWin {
-    position: absolute;
-    top: 80px;
-    left:12px;
-    transform: rotate(-20deg);
-
+.imageWin, .imageLost {
+  position: absolute;
+  top: 70px;
+  left: 24px;
+  transform: rotate(-20deg);
 }
 
-.imageLost {
-    position:absolute;
-    top: 80px;
-    left:12px;
-    transform: rotate(-20deg);
-}
-.noImage{
-    display: none;
+.noImage {
+  display: none;
 }
 .button-order {
-    display: grid;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
 }
 
-.button-order :nth-child(2) { 
-    order: 1; }
-.button-order :nth-child(3) { 
-    order: 2; }
-.button-order :nth-child(4) { 
-    order: 3; }
+.button-order :nth-child(2) {
+  order: 1;
+}
+.button-order :nth-child(3) {
+  order: 2;
+}
+.button-order :nth-child(4) {
+  order: 3;
+}
+
+.btn.is-disabled,
+.btn[disabled] {
+  pointer-events: none;
+  background: #fafafa;
+	color: #ccc;
+	border-color: #ccc;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}

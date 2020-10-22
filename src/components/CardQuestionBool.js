@@ -71,29 +71,25 @@ class CardQuestionBool extends React.Component {
   render() {
 		const { arrayQuestions, count, questionNumber, loading, step } = this.state;
     const { location } = this.props;
-    const { state: { categoryName } } = location;
+    const { state: { categoryName, categoryPicto } } = location;
     return (
       <div className="cardContent">
         <div className="questionNumber">
           <QuestionNumber questionNumber={questionNumber} />
         </div>
         <div className="bloc-qcm">
+          <i className={categoryPicto} style={{color:'#ffc800', fontSize:'50px', paddingBottom:'12px'}}></i>
           <div className="categrie-name">{categoryName}</div>
-
           <hr className="ligneSection"></hr>
-
           <span className="counter">
             <ScoreQcm count={count} />
           </span>
-
           {arrayQuestions.length > 0 ? arrayQuestions.slice(step, step+1).map((q) => (
             <div key={q.question}>
               <span>
                 <Question question={q.question} />
               </span>
-
               <p>True or False ?</p>
-
               <div id="buttonQcmContainer">
                 <div key={q.category}>
                   <ButtonBool

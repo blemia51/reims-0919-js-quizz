@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Button from "./Button"
 import "./ButtonQcm.css";
 
 class ButtonQcm extends React.Component {
@@ -109,7 +110,7 @@ class ButtonQcm extends React.Component {
           ></img>
         </div>
         <div>
-          <button
+          {/* <button
             disabled={this.props.step < 4 ? false : true} 
             className={
               lost || win ? "qcmButton" : "noImage"
@@ -117,7 +118,15 @@ class ButtonQcm extends React.Component {
             onClick={this.nextQuestion}
           >
             Next question
-          </button>
+          </button> */}
+          <Button
+            label='Next question'
+            className={
+              lost || win ? "qcmButton" : "noImage"
+            }
+            isDisabled={this.props.step < 4 ? false : true} 
+            onClick={this.nextQuestion}
+          />
         </div>
       </div>
     );
@@ -125,7 +134,7 @@ class ButtonQcm extends React.Component {
 }
 
 ButtonQcm.propTypes = {
-  step: PropTypes.bool,
+  step: PropTypes.number,
   loading: PropTypes.bool,
   correct_answer: PropTypes.string,
   nextStep: PropTypes.func,
