@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
+import Button from "./Button"
 import "./ButtonQcm.css";
 
 class ButtonBool extends React.Component {
@@ -94,7 +95,7 @@ class ButtonBool extends React.Component {
           ></img>
         </div>
         <div>
-          <button
+          {/* <button
             disabled={this.props.step < 4 ? false : true} 
             onClick={this.nextQuestion}
             className={
@@ -102,7 +103,15 @@ class ButtonBool extends React.Component {
             }
           >
             Next question
-          </button>
+          </button> */}
+          <Button
+            label='Next question'
+            className={
+              this.state.lost || this.state.win ? "qcmButton" : "noImage"
+            }
+            isDisabled={this.props.step < 4 ? false : true} 
+            onClick={this.nextQuestion}
+          />
         </div>
       </div>
     );
