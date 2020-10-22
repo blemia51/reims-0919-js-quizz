@@ -1,4 +1,4 @@
-/// @flow
+import PropTypes from "prop-types";
 import React, { PureComponent } from 'react';
 import { dynamicClassName } from '../utils/dynamicClassName';
 import { Link } from 'react-router-dom';
@@ -44,6 +44,17 @@ class Button extends PureComponent {
       </button>
     );
   }
+}
+
+Button.propTypes = {
+  className: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  isFull: PropTypes.bool,
+  isSecondary: PropTypes.bool,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  title: PropTypes.string,
+  url: PropTypes.string
 }
 
 export default Button;
